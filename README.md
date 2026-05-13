@@ -80,6 +80,28 @@ Contienen grandes volúmenes de datos utilizados para pruebas, consultas y valid
 - Estructura reproducible mediante Docker
 
 ---
+## Ejecución preliminar del proyecto
+
+### Levantar PostgreSQL con Docker
+
+```bash
+docker compose up -d
+```
+
+### Detener contenedores
+
+```bash
+docker compose down
+```
+
+---
+
+## Tecnologías
+
+- PostgreSQL
+- Docker
+- Liquibase
+
 
 ## Estado actual
 
