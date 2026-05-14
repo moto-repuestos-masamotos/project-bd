@@ -1,0 +1,4 @@
+CREATE TABLE marca (
+    id INT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL UNIQUE
+);
