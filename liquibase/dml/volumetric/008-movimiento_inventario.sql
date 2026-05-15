@@ -1,4 +1,4 @@
-INSERT INTO movimiento_inventario (id, inventario_id, tipo_movimiento_id, cantidad, fecha_movimiento) VALUES
+INSERT INTO movimiento_inventario (id, inventario_id, tipo_movimiento_inventario_id, cantidad, fecha_movimiento) VALUES
 (1, 1, 2, 2, '2026-01-15'),
 (2, 2, 2, 1, '2026-01-15'),
 (3, 3, 2, 1, '2026-01-16'),
