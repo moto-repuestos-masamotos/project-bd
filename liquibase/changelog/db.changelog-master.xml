@@ -1,10 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+    Archivo principal de Liquibase.
+    Controla el orden de ejecución de:
+    - DDL
+    - DML canónico
+    - DML volumétrico
+-->
+
 <databaseChangeLog
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
-    http://www.liquibase.org/xml/ns/dbchangelog
-    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+        http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  
+    <!--  DDL -->
+  
+
+    <!-- Tabla cliente -->
+    <changeSet id="1" author="grupo">
+        <sqlFile path="../ddl/001-cliente.sql"/>
+    </changeSet>
+
+    <!-- Tabla categoria -->
+    <changeSet id="2" author="grupo">
+        <sqlFile path="../ddl/002-categoria.sql"/>
+    </changeSet>
+
+    <!-- Tabla marca -->
+    <changeSet id="3" author="grupo">
+        <sqlFile path="../ddl/003-marca.sql"/>
+    </changeSet>
+
+    <!-- Tabla producto -->
+    <changeSet id="4" author="grupo">
+        <sqlFile path="../ddl/004-producto.sql"/>
+    </changeSet>
+
+    <!-- Tabla inventario -->
+    <changeSet id="5" author="grupo">
+        <sqlFile path="../ddl/005-inventario.sql"/>
+    </changeSet>
+
+    <!-- Tabla tipo movimiento inventario -->
+    <changeSet id="6" author="grupo">
+        <sqlFile path="../ddl/006-tipo_movimiento_inventario.sql"/>
+    </changeSet>
+
+    <!-- Tabla estado pedido -->
+    <changeSet id="7" author="grupo">
+        <sqlFile path="../ddl/007-estado_pedido.sql"/>
+    </changeSet>
+
+    <!-- Tabla pedido -->
+    <changeSet id="8" author="grupo">
+        <sqlFile path="../ddl/008-pedido.sql"/>
+    </changeSet>
+
+    <!-- Tabla detalle pedido -->
+    <changeSet id="9" author="grupo">
+        <sqlFile path="../ddl/009-detalle_pedido.sql"/>
+    </changeSet>
+
+    <!-- Tabla movimiento inventario -->
+    <changeSet id="10" author="grupo">
+        <sqlFile path="../ddl/010-movimiento_inventario.sql"/>
+    </changeSet>
+
+    <!-- Tabla estado factura -->
+    <changeSet id="11" author="grupo">
+        <sqlFile path="../ddl/011-estado_factura.sql"/>
+    </changeSet>
+
+    <!-- Tabla factura -->
+    <changeSet id="12" author="grupo">
+        <sqlFile path="../ddl/012-factura.sql"/>
+    </changeSet>
+
+    <!-- Tabla metodo pago -->
+    <changeSet id="13" author="grupo">
+        <sqlFile path="../ddl/013-metodo_pago.sql"/>
+    </changeSet>
+
+    <!-- Tabla pago -->
+    <changeSet id="14" author="grupo">
+        <sqlFile path="../ddl/014-pago.sql"/>
+    </changeSet>
+
+   
+    <!-- DML CANONICAL-->
+
+
+    <!-- Categorías -->
+    <changeSet id="15" author="grupo">
+        <sqlFile path="../dml/canonical/001-categorias.sql"/>
+    </changeSet>
+
+    <!-- Marcas -->
+    <changeSet id="16" author="grupo">
+        <sqlFile path="../dml/canonical/002-marcas.sql"/>
+    </changeSet>
+
+    <!-- Métodos de pago -->
+    <changeSet id="17" author="grupo">
+        <sqlFile path="../dml/canonical/003-metodo_pago.sql"/>
+    </changeSet>
+
+    <!-- Estados pedido -->
+    <changeSet id="18" author="grupo">
+        <sqlFile path="../dml/canonical/004-estado_pedido.sql"/>
+    </changeSet>
+
+    <!-- Estados factura -->
+    <changeSet id="19" author="grupo">
+        <sqlFile path="../dml/canonical/005-estado_factura.sql"/>
+    </changeSet>
+
+    <!-- Tipos movimiento inventario -->
+    <changeSet id="20" author="grupo">
+        <sqlFile path="../dml/canonical/006-tipo_movimiento_inventario.sql"/>
+    </changeSet>
+
+
+    <!-- DML VOLUMETRIC  -->
+
+
+    <!-- Clientes -->
+    <changeSet id="21" author="grupo">
+        <sqlFile path="../dml/volumetric/001-clientes.sql"/>
+    </changeSet>
+
+    <!-- Productos -->
+    <changeSet id="22" author="grupo">
+        <sqlFile path="../dml/volumetric/002-productos.sql"/>
+    </changeSet>
+
+    <!-- Inventario -->
+    <changeSet id="23" author="grupo">
+        <sqlFile path="../dml/volumetric/003-inventario.sql"/>
+    </changeSet>
+
+    <!-- Pedidos -->
+    <changeSet id="24" author="grupo">
+        <sqlFile path="../dml/volumetric/004-pedidos.sql"/>
+    </changeSet>
+
+    <!-- Detalle pedido -->
+    <changeSet id="25" author="grupo">
+        <sqlFile path="../dml/volumetric/005-detalle_pedido.sql"/>
+    </changeSet>
+
+    <!-- Facturas -->
+    <changeSet id="26" author="grupo">
+        <sqlFile path="../dml/volumetric/006-facturas.sql"/>
+    </changeSet>
+
+    <!-- Pagos -->
+    <changeSet id="27" author="grupo">
+        <sqlFile path="../dml/volumetric/007-pagos.sql"/>
+    </changeSet>
+
+    <!-- Movimientos inventario -->
+    <changeSet id="28" author="grupo">
+        <sqlFile path="../dml/volumetric/008-movimiento_inventario.sql"/>
+    </changeSet>
 
 </databaseChangeLog>
