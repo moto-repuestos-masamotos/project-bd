@@ -1,7 +1,8 @@
-url=jdbc:postgresql://localhost:5432/moto_repuestos
+url=jdbc:postgresql://host.docker.internal:5432/moto_repuestos
+
 username=postgres
 password=postgres
 
-driver=org.postgresql.Driver
-
 changeLogFile=liquibase/changelog/db.changelog-master.xml
+
+logLevel=info
