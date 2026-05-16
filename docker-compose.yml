@@ -1,11 +1,8 @@
-version: '3.9'
-
 services:
-  postgres:
+
+  db:
     image: postgres:16
     container_name: moto_repuestos_db
-
-    restart: always
 
     environment:
       POSTGRES_DB: moto_repuestos
@@ -17,6 +14,22 @@ services:
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+  liquibase:
+    image: liquibase/liquibase:4.27
+    container_name: moto_repuestos_liquibase
+
+    depends_on:
+      - db
+
+    volumes:
+      - ./:/liquibase/project
+
+    working_dir: /liquibase/project
+
+    command:
+      - --defaultsFile=./liquibase.properties
+      - update
 
 volumes:
   postgres_data:
