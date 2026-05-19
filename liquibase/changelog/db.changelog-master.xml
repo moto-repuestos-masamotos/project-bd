@@ -155,4 +155,31 @@
         </rollback>
     </changeSet>
 
+    <changeSet id="29" author="grupo">
+        <sqlFile path="liquibase/dml/volumetric/009-factura_integrante2.sql"/>
+
+        <rollback>
+            DELETE FROM factura
+            WHERE id IN (101,102);
+        </rollback>
+    </changeSet>
+
+    <changeSet id="30" author="grupo">
+        <sqlFile path="liquibase/dml/volumetric/010-pedido_integrante3.sql"/>
+
+        <rollback>
+            DELETE FROM pedido
+            WHERE id IN (201,202);
+        </rollback>
+    </changeSet>
+
+    <changeSet id="31" author="grupo">
+        <sqlFile path="liquibase/dml/volumetric/011-producto_integrante4.sql"/>
+
+        <rollback>
+            DELETE FROM producto
+            WHERE id IN (301,302);
+        </rollback>
+    </changeSet>
+
 </databaseChangeLog>
