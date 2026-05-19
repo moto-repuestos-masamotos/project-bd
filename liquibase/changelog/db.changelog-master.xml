@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <databaseChangeLog
-    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
         http://www.liquibase.org/xml/ns/dbchangelog
-        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
     <!-- ========================= -->
     <!-- DDL -->
@@ -101,36 +101,58 @@
 
     <changeSet id="21" author="grupo">
         <sqlFile path="liquibase/dml/volumetric/001-clientes.sql"/>
+        <rollback>
+            DELETE FROM cliente;
+        </rollback>
     </changeSet>
 
     <changeSet id="22" author="grupo">
         <sqlFile path="liquibase/dml/volumetric/002-productos.sql"/>
+        <rollback>
+            DELETE FROM producto;
+        </rollback>
     </changeSet>
 
     <changeSet id="23" author="grupo">
         <sqlFile path="liquibase/dml/volumetric/003-inventario.sql"/>
+        <rollback>
+            DELETE FROM inventario;
+        </rollback>
     </changeSet>
 
-    <!-- PRIMERO pedidos -->
     <changeSet id="24" author="grupo">
         <sqlFile path="liquibase/dml/volumetric/004-pedidos.sql"/>
+        <rollback>
+            DELETE FROM pedido;
+        </rollback>
     </changeSet>
 
-    <!-- DESPUÉS detalles -->
     <changeSet id="25" author="grupo">
         <sqlFile path="liquibase/dml/volumetric/005-detalles_pedido.sql"/>
+        <rollback>
+            DELETE FROM detalle_pedido;
+        </rollback>
     </changeSet>
 
     <changeSet id="26" author="grupo">
         <sqlFile path="liquibase/dml/volumetric/006-factura.sql"/>
+        <rollback>
+            DELETE FROM factura;
+        </rollback>
     </changeSet>
 
     <changeSet id="27" author="grupo">
         <sqlFile path="liquibase/dml/volumetric/007-pago.sql"/>
+        <rollback>
+            DELETE FROM pago;
+        </rollback>
     </changeSet>
 
     <changeSet id="28" author="grupo">
         <sqlFile path="liquibase/dml/volumetric/008-movimiento_inventario.sql"/>
+        <rollback>
+            DELETE FROM movimiento_inventario;
+        </rollback>
     </changeSet>
 
 </databaseChangeLog>

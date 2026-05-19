@@ -27,9 +27,5 @@ services:
 
     working_dir: /liquibase/project
 
-    command:
-      - --defaultsFile=./liquibase.properties
-      - update
-
 volumes:
   postgres_data:
